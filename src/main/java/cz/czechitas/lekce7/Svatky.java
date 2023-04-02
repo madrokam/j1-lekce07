@@ -3,6 +3,7 @@ package cz.czechitas.lekce7;
 import java.time.Month;
 import java.time.MonthDay;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -60,7 +61,8 @@ public class Svatky {
    */
   public MonthDay kdyMaSvatek(String jmeno) {
     //TODO
-    return null;
+
+    return this.svatky.get(jmeno);
   }
 
   /**
@@ -70,7 +72,7 @@ public class Svatky {
    */
   public boolean jeVSeznamu(String jmeno) {
     //TODO
-    return false;
+    return this.svatky.containsKey(jmeno);
   }
 
   /**
@@ -79,7 +81,10 @@ public class Svatky {
    */
   public int getPocetJmen() {
     //TODO
-    return 0;
+    Set<String> keys=new HashSet<>();
+    // Jmena se ukladaji do mnoziny, abych odstranila duplikaty
+    this.svatky.forEach((k,v) -> {keys.add(k);});
+    return keys.size();
   }
 
   /**
@@ -88,7 +93,10 @@ public class Svatky {
    */
   public Set<String> getSeznamJmen() {
     //TODO
-    return null;
+    Set<String> keys=new HashSet<>();
+    // Jmena se ukladaji do mnoziny, abych odstranila duplikaty
+    this.svatky.forEach((k,v) -> {keys.add(k);});
+    return keys;
   }
 
   /**
@@ -98,6 +106,7 @@ public class Svatky {
    */
   public void pridatSvatek(String jmeno, MonthDay denMesic) {
     //TODO
+    this.svatky.put(jmeno,denMesic);
   }
 
   /**
@@ -108,6 +117,7 @@ public class Svatky {
    */
   public void pridatSvatek(String jmeno, int den, int mesic) {
     //TODO
+    this.svatky.put(jmeno,MonthDay.of(mesic, den));
   }
 
   /**
@@ -118,6 +128,7 @@ public class Svatky {
    */
   public void pridatSvatek(String jmeno, int den, Month mesic) {
     //TODO
+  this.svatky.put(jmeno,MonthDay.of(mesic.getValue(),den));
   }
 
   /**
@@ -126,5 +137,11 @@ public class Svatky {
    */
   public void smazatSvatek(String jmeno) {
     //TODO
+    this.svatky.remove(jmeno);
+  }
+
+  public int pocetZaznamu() {
+    //TODO
+    return svatky.size();
   }
 }

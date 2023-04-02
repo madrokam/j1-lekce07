@@ -20,10 +20,15 @@ public class HlavniProgram {
         System.out.printf("Monika má svátek %s.", svatky.kdyMaSvatek("Monika")).println();
         System.out.printf("Eva je v seznamu svátků: %b.", svatky.jeVSeznamu("Eva")).println();
 
-/*
+        System.out.printf("Alex je v seznamu svátků: %b.", svatky.jeVSeznamu("Alex")).println();
+        svatky.smazatSvatek("Alex");
+        System.out.printf("Alex je v seznamu svátků: %b.", svatky.jeVSeznamu("Alex")).println();
+
+
         System.out.println("V seznamu jsou následující jména:");
         svatky.getSeznamJmen().forEach(jmeno -> System.out.printf("- %s", jmeno).println());
 
+        System.out.printf("V seznamu je %d jmen.", svatky.getPocetJmen()).println();
         svatky.smazatSvatek("Přemysl");
         System.out.printf("Po smazání Přemysla je v seznamu je %d jmen.", svatky.getPocetJmen()).println();
 
@@ -32,7 +37,7 @@ public class HlavniProgram {
         svatky.pridatSvatek("Tamara", MonthDay.of(6, 3));
         svatky.pridatSvatek("Kevin", MonthDay.of(Month.JUNE, 3));
         System.out.printf("Po přidání Laury, Jarmila, Tamary a Kevina je v seznamu je %d jmen.", svatky.getPocetJmen()).println();
-*/
+
     }
 
 }
