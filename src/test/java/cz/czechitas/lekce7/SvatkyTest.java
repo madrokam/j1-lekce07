@@ -65,8 +65,8 @@ class SvatkyTest {
     Svatky svatky = new Svatky();
     svatky.pridatSvatek("Silvestr", 31, 12);
     assertTrue(svatky.jeVSeznamu("Silvestr"));
-    //takto bychom otestoval spravny mesic, ale to se v zadani nepozaduje
-    //assertEquals(svatky.kdyMaSvatek("Silvestr").getMonthValue(),12);
+    //takto se otestuje spravny mesic
+    assertEquals(svatky.kdyMaSvatek("Silvestr").getMonthValue(),12);
     assertEquals(svatky.kdyMaSvatek("Silvestr").getDayOfMonth(),31);
   }
 
@@ -78,8 +78,8 @@ class SvatkyTest {
     //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
     Svatky svatky = new Svatky();
     svatky.pridatSvatek("Pravoslav", 12, Month.JANUARY);
-    //takto bychom otestoval spravny mesic, ale to se v zadani nepozaduje
-    //assertEquals(svatky.kdyMaSvatek("Pravoslav").getMonthValue(),1);
+    //takto se otestuje spravny mesic
+    assertEquals(svatky.kdyMaSvatek("Pravoslav").getMonthValue(),1);
     assertEquals(svatky.kdyMaSvatek("Pravoslav").getDayOfMonth(),12);
   }
 
@@ -91,8 +91,8 @@ class SvatkyTest {
     //TODO Otestuje, že je jméno v seznamu svátků a že má přiřazen správný den
     Svatky svatky = new Svatky();
     svatky.pridatSvatek("Milena", MonthDay.of(1, 24));
-    //takto bychom otestoval spravny mesic, ale to se v zadani nepozaduje
-    //assertEquals(svatky.kdyMaSvatek("Milena").getMonthValue(),1);
+    //takto se otestuje spravny mesic
+    assertEquals(svatky.kdyMaSvatek("Milena").getMonthValue(),1);
     assertEquals(svatky.kdyMaSvatek("Milena").getDayOfMonth(),24);
 
   }
